@@ -1,15 +1,11 @@
 function mutation(arr) {
-	//lowercase, splice, includes
 	let testArr = arr[1].toLowerCase().split("");
-	let i = 0
-	while (i < testArr.length) {
-		if (arr[0].toLowerCase().includes(testArr[i])) {
-			i++;
-		} else {
+	for (let i = 0; i < testArr.length; i++) {
+		if (!arr[0].toLowerCase().includes(testArr[i])) {
 			return false;
 		}
 	}
 	return true;
 }
 
-console.log(mutation(["hello", "Hello"]));
+console.log(mutation(["hello", "Hallo"]));
